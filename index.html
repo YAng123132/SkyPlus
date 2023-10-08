@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SkyBlock +</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <!--//Style-CSS -->
+</head>
+
+<body>
+    <div class="Coming-block">
+
+        <div class="page">
+
+        </div>
+        <div class="content">
+            <div class="logo">
+                
+                <a class="brand-logo" href="#index.html">
+                    <img src="images/logo.png" style="height:135px;" />
+                </a> 
+            </div>
+            <div class="w3l-coming-soon-page">
+                <div class="coming-block">
+                    <h1>Maintenance</h1>
+                    <p>We are preparing something special. Don't go too far!</p>
+                    <a href="https://cdn.discordapp.com/attachments/1160132743338926141/1160506420526063766/main?ex=6534e8d3&is=652273d3&hm=83c530a67b0ab42ce746c164dacc967644f37a762fea601907cea87071a4d5b0&" class="home">Download</a>
+                    <a href="https://discord.superhori.com/" class="home">Go to FORUM</a>
+                </div>
+            </div>
+        </div>
+		
+        <script src="js/jquery-3.3.1.min.js"></script>
+        
+        <script>
+            var lFollowX = 0,
+                lFollowY = 0,
+                x = 0,
+                y = 0,
+                friction = 1 / 30;
+
+            function animate() {
+                x += (lFollowX - x) * friction;
+                y += (lFollowY - y) * friction;
+
+                translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.1)';
+
+                $('.page').css({
+                    '-webit-transform': translate,
+                    '-moz-transform': translate,
+                    'transform': translate
+                });
+
+                window.requestAnimationFrame(animate);
+            }
+
+            $(window).on('mousemove click', function (e) {
+
+                var lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
+                var lMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
+                lFollowX = (20 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+                lFollowY = (10 * lMouseY) / 100;
+
+            });
+
+            animate();
+        </script>
+    </div>
+</body>
+
+</html>
